@@ -1,0 +1,22 @@
+#: import Colors components.modules.colors.Colors
+
+<OnlineFriends>
+    size_hint: None, None
+    md_bg_color: Colors.white
+    size: "50dp", "50dp"
+
+    AvatarImage:
+        source: root.avatar
+        pos_hint: {"center_x": .5, "center_y": .5}
+
+    FitImage:
+        source: "assets/images/red.png"
+        size_hint: None, None
+        size: "20dp", "20dp"
+        pos_hint: {"center_x": .8, "center_y": .2}
+
+
+<AvatarImage@FitImage>:
+    radius: [40, ]
+    size_hint: None,None
+    size: '50dp','50dp'

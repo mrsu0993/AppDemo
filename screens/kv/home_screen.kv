@@ -1,0 +1,134 @@
+#: import Colors components.modules.colors.Colors
+#: import BottomBar components.class_uix.bottombar.BottomBar
+
+<Home_Screen>:
+    md_bg_color: Colors.white
+    name: "home_screen"
+
+    # chua noi dung man hinh
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        # (I) Top nav bar
+        MDTopAppBar:
+            md_bg_color: Colors.white
+            title: "facebook"
+            specific_text_color: Colors.blue2
+            right_action_items: [["magnify"], ["facebook-messenger"]]
+            elevation: 0
+            #md_bg_color: "#ffffff"
+
+
+        # (II) nav bar
+        MDBoxLayout:
+            orientation: "vertical"
+            MDScrollView:
+                bar_width: 0
+
+                # qui định 1 phần tử con có chiều cao không cố định
+                MDBoxLayout:
+                    adaptive_height: True
+
+                    # qui định cách sắp xếp của 3 phần tử con theo chiều dọc
+                    MDBoxLayout:
+                        orientation: "vertical"
+                        adaptive_height: True
+
+                        # (1) thành phần Profile (((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))
+                        MDBoxLayout:
+                            adaptive_height: True
+                            height: "100dp"
+                            orientation: "horizontal"
+                            padding: "10dp"
+                            spacing: "20dp"
+
+                            AvatarImage:
+                                source: root.profile_pic
+                            
+                            MDRoundFlatButton:
+                                text: 'Write something here...\nWrite something here...'
+                                size_hint: 1, 1
+                                line_color: Colors.do
+                                text_color: Colors.do
+                        
+                        # (2) Three buttons: live, Photo and Reels(((((((((((((((((((((((())))))))))))))))))))))))
+                        MDBoxLayout:
+                            adaptive_height: True
+                            height: "40dp"
+                            padding: "5dp"
+                            spacing: "10dp"
+
+                            Threebuttons:
+                                text: "Live"
+                                icon: "video"
+                                icon_color: Colors.do
+
+                            Threebuttons:
+                                text: "Photo"
+                                icon: "image-multiple"
+                                icon_color: Colors.vang
+                            
+                            Threebuttons:
+                                text: "Reels"
+                                icon: "movie-play"
+                                icon_color: Colors.blue2
+
+
+                        MDSeparator:
+                            size_hint_y: None
+                            height: "70dp"
+                            md_bg_color: Colors.white
+                            
+
+                        # (3)((((((((((((((((((((((((((((((((((((()))(((((())))))))))))))))))))))))))))))))))))))))
+                        MDBoxLayout:
+                            MDScrollView:
+                                size_hint_y: None
+                                height: "70dp"
+                                bar_width: 0
+
+                                MDBoxLayout:
+                                    adaptive_width: True                  
+                                    spacing: "10dp"
+                                    padding: "10dp"
+
+                                    MDRoundFlatIconButton:
+                                        text: "Create\nRoom"
+                                        icon: "video-plus"
+                                        line_color: Colors.do
+                                        icon_color: Colors.vang
+                                        text_color: Colors.blue1
+                                    
+                                    MDBoxLayout: 
+                                        id: online_friends
+                                        adaptive_width: True 
+                                        spacing: "10dp"
+                                        pos_hint: {"center_x": .5, "center_y": .5}
+
+
+                        # (4)((((((((((((((((((((((((((((((((((((()))(((((())))))))))))))))))))))))))))))))))))))))
+                        MDBoxLayout:
+                            adaptive_height: True
+                            orientation: "vertical"
+                            id: timeline
+                            spacing: "80dp"
+                            padding: 0, "70dp", 0, 0
+
+                        
+            # Bottom bar
+            BottomBar:
+            
+
+
+<Threebuttons@MDRectangleFlatIconButton>:
+    line_color: Colors.white
+    theme_text_color: "Custom"
+    text_color: Colors.black
+    size_hint: 1, 1
+    _no_ripple_effect: True
+
+
+<AvatarImage@FitImage>:
+    radius: ["40dp", ]
+    size_hint: None,None
+    size: '50dp','50dp'

@@ -1,0 +1,36 @@
+#: import BottomBar components.class_uix.bottombar.BottomBar
+#: import Tab components.class_uix.tab.Tab
+#: import Colors components.modules.colors.Colors
+
+<Apple_Screen>:
+    name: "apple"
+    MDBoxLayout:
+        orientation: "vertical"
+        # (I)
+        MDBoxLayout:
+            orientation: "vertical"
+            #AppBar:
+            MDTabs:
+                #tab_indicator_type: "round"
+                #tab_hint_x: True 
+                background_color: Colors.white
+                text_color_normal: Colors.den
+                text_color_active: Colors.black
+                indicator_color: Colors.black
+                tab_bar_height: "35dp"
+                font_size: "6sp"
+                Tab:
+                    title:'Ưu tiên'
+                    Chat:
+                        id:chats
+
+                Tab:
+                    title:'Khác'
+                    MDScrollView:
+                        MDList:
+                            id: others
+
+        # (II)
+
+        # (III)
+        BottomBar:

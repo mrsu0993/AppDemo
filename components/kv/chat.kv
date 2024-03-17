@@ -1,0 +1,14 @@
+#: import ChatItem components.class_uix.chatitem.ChatItem
+
+<Chat>:
+	chat_container:chat_container
+	MDBoxLayout:
+		RecycleView:
+			id: chat_container
+			viewclass:'ChatItem'
+			RecycleBoxLayout:
+				orientation: 'vertical'
+				default_size_hint: 1, None
+				default_size: None, dp(64)
+				size_hint_y: None
+				height: self.minimum_height

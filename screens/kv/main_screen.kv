@@ -1,0 +1,32 @@
+#: import Colors components.modules.colors.Colors
+#:import Window kivy.core.window.Window
+<Main_Screen>:
+    name: "main_screen"
+
+    MDBottomNavigation:
+        text_color_normal: Colors.den
+        text_color_active: Colors.blue1
+        use_text: False
+
+        MDBottomNavigationItem:
+            name: 'screen 1'
+            icon: 'home'
+            id: home
+
+
+        MDBottomNavigationItem:
+            name: 'screen2'
+            icon: 'youtube'
+            id: youtube
+
+
+        MDBottomNavigationItem:
+            name: 'screen 3'
+            icon: 'apple'
+            id: apple
+
+
+        MDBottomNavigationItem:
+            name: 'screen 4'
+            icon: 'tag'
+            id: tag

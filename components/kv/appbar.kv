@@ -1,0 +1,28 @@
+#: import colors libs.applibs.colors
+
+<AppBar@MDBoxLayout>:
+    adaptive_height: True
+    md_bg_color: colors.blue2
+    
+    MDIconButton:
+        icon: 'magnify'
+        theme_icon_color: "Custom"
+        icon_color: colors.white
+    
+    MDLabel:
+        text: 'Tìm kiếm'
+        valign: 'center'
+        font_size: "14sp"
+        theme_text_color: "Custom"
+        text_color: colors.white
+    
+    MDIconButton:
+        icon: "qrcode-scan"
+        size: '10dp','10dp'
+        theme_icon_color: "Custom"
+        icon_color: colors.white
+    MDIconButton:
+        icon: 'plus'
+        on_release: app.screen_manager.change_screen("profile")
+        theme_icon_color: "Custom"
+        icon_color: colors.white

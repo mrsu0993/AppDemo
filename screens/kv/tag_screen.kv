@@ -1,0 +1,57 @@
+#: import Colors components.modules.colors.Colors
+#: import BottomBar components.class_uix.bottombar.BottomBar
+
+<Tag_Screen>:
+    name: "tag"
+    MDBoxLayout:
+        orientation: "vertical"
+        MDTopAppBar:
+            title: "Mrsu"
+            pos_hint: {"top": 1}
+            right_action_items: [["dots-vertical", lambda x: root.show_sheet()]]
+
+        # (1)
+        MDBoxLayout:
+            MDLabel: 
+                text: "Mrsu"
+                halign: "center"
+
+        # Bottom bar
+        BottomBar:
+
+
+
+
+<CustomSheet@BoxLayout>:
+    orientation: "vertical"
+    size_hint_y: None
+    height: "200dp"
+
+    MDGridLayout:
+        cols: 1
+        rows: 4
+        adaptive_height: True
+
+        ItemForCus:
+            icon: "page-previous"
+            text: "Preview"
+
+        ItemForCus:
+            icon: "exit-to-app"
+            text: "Exit"
+
+        ItemForCus:
+            icon: "youtube"
+            text: "Youtune"
+
+        ItemForCus:
+            icon: "exit-to-app"
+            text: "Exit"
+
+
+<ItemForCus@OneLineIconListItem>
+    on_press: root.custom_sheet.dismiss()
+    icon: ""
+
+    IconLeftWidget:
+        icon: root.icon

@@ -1,0 +1,60 @@
+#: import Colors components.modules.colors.Colors
+
+<BottomBar>:
+    adaptive_height: True
+    height: "50dp"
+    padding: 0, "40dp", 0, "15dp"
+    spacing: 0
+    md_bg_color: Colors.vang
+    
+    MDBoxLayout:
+        orientation: "vertical"   
+        spacing: 0
+        
+        MDIconButton:
+            icon: "home"
+            pos_hint: {"center_x": .5}
+            on_release: app.screen_manager.change_screen("home_screen")
+        MDLabel:
+            text: "Home"
+            halign: "center"
+            font_size: "12dp"
+
+    MDBoxLayout:
+        orientation: "vertical"   
+        spacing: 0
+        MDIconButton:
+            icon: "youtube"
+            pos_hint: {"center_x": .5}
+            on_release: app.screen_manager.change_screen("youtube")
+        MDLabel:
+            text: "Youtube"
+            halign: "center"
+            font_size: "12dp"
+
+    MDBoxLayout:
+        orientation: "vertical"
+        spacing: 0
+        MDIconButton:
+            icon: "twitter"
+            pos_hint: {"center_x": .5}
+            on_release: app.screen_manager.change_screen("tag")
+
+        MDLabel:
+            text: "Twitter"
+            halign: "center"
+            font_size: "12dp"
+
+    MDBoxLayout:
+        orientation: "vertical"   
+        spacing: 0
+        MDIconButton:
+            icon: "apple"
+            pos_hint: {"center_x": .5}
+            on_release: app.screen_manager.change_screen("apple")
+
+        MDLabel:
+            text: "Apple"
+            halign: "center"
+            font_size: "12dp"
+            

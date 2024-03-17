@@ -1,0 +1,92 @@
+#:import Colors components.modules.colors.Colors
+
+<Post>
+    orientation: "vertical"
+    size_hint_y: None
+    height: "520dp"
+    spacing: "10dp"
+    id: mrsu
+
+    MDBoxLayout:
+        padding: "5dp"
+        adaptive_height: True
+        padding: 0, 0, 0, -dp(15)
+
+        TwoLineAvatarIconListItem:
+            text: root.name
+            secondary_text: root.updated_ago
+            divider: None
+            _no_ripple_effect: True
+            padding: "60dp"
+
+            ImageLeftWidget:
+                source: root.avatar
+                radius: ["20dp", ]
+                
+
+        MDIconButton:
+            icon: "dots-horizontal"
+
+    MDBoxLayout:
+        adaptive_height: True
+        height: "10dp"
+        padding: "20dp", 0, 0, 0
+
+        MDLabel:
+            text: root.caption
+            adaptive_height: True
+
+    FitImage: 
+        size_hint_y: None
+        height: mrsu.height * 0.8
+        source: root.post
+
+    MDBoxLayout: 
+        adaptive_height: True
+        padding: "7dp"
+        spacing: "5dp"
+
+        # Reactions
+        Reactions: 
+            source: "assets/images/funny.jpg"
+        Reactions: 
+            source: "assets/images/love.png"
+        Reactions: 
+            source: "assets/images/like.png"
+
+        MDLabel:
+            text: f"{root.likes}"
+            font_size: "13dp"
+
+        Widget:
+
+        MDLabel:
+            text: f"{root.comments} comments"
+            font_size: "13dp"
+            shorten: True
+
+    # Like, comment, share buttons
+    MDBoxLayout:
+        adaptive_height: True
+        padding: 0, -10, 0, 0
+
+        ReactionButtons:
+            icon: "thumb-up-outline"
+            text: "Like"
+        ReactionButtons:
+            icon: "comment-outline"
+            text: "Comment"
+        ReactionButtons:
+            icon: "share-outline"
+            text: "Share"
+
+<ReactionButtons@MDRectangleFlatIconButton>:
+    theme_text_color: "Custom"                
+    text_color: Colors.den
+    line_color: Colors.white
+    icon_color: Colors.den
+
+<Reactions@FitImage>:
+    size_hint: None, None
+    size: "15dp", "15dp"
+    radius: "10dp"

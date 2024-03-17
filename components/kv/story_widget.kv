@@ -1,0 +1,39 @@
+#: import Colors components.modules.colors.Colors
+
+<StoryWidget>
+    size_hint: None, None
+    size: "160dp", "210dp"
+    md_bg_color: Colors.white
+
+    MDCard:
+        pos_hint: {"center_x": .5}
+        id: card
+        size_hint: None, None
+        size: "150dp", "200dp"
+
+        FitImage:
+            source: root.image
+            mipmap: True
+            radius: ["50dp", ]
+            
+    MDCard:
+        size_hint: None, None
+        size: "30dp", "30dp"
+        radius: ["50dp", ]
+        x: 10
+        y: card.height - self.height * 1.2
+        
+
+        FitImage:
+            source: root.avatar
+            radius: ["50dp", ]
+            mipmap: True
+            elevation: 3
+
+    MDLabel:
+        halign: "center"
+        pos_hint: {"center_x": .5, "center_y": .1}
+        text: root.name
+        theme_text_color: "Custom"
+        text_color: Colors.vang
+        font_size: "10dp"

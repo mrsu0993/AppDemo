@@ -1,0 +1,85 @@
+#: import Colors components.modules.colors.Colors
+#: import BottomBar components.class_uix.bottombar.BottomBar
+
+<Youtube_Screen>:
+    md_bg_color: Colors.white
+    name: "youtube"
+    MDBoxLayout:
+        orientation: "vertical"
+
+        # (I)
+        MDBoxLayout:
+            adaptive_height: True
+            height: "40dp"
+            padding: "5dp"
+            spacing: "10dp"
+
+            Threebuttons:
+                text: "Live"
+                icon: "video"
+                icon_color: Colors.do
+
+            Threebuttons:
+                text: "Photo"
+                icon: "image-multiple"
+                icon_color: Colors.vang
+            
+            Threebuttons:
+                text: "Reels"
+                icon: "movie-play"
+                icon_color: Colors.blue2
+                on_release: app.screen_manager.change_screen("profile_screen")
+
+        MDSeparator:
+            size_hint_y: None
+            height: "3dp"
+            md_bg_color: Colors.white
+        
+        # (II)
+        MDScrollView:
+            
+            MDBoxLayout: 
+                adaptive_height: True
+                orientation: "vertical"
+
+                # (1)
+                MDSeparator:
+                    size_hint_y: None
+                    height: "20dp"
+                    md_bg_color: Colors.white
+
+                # (2)
+                MDScrollView:
+                    size_hint_y: None
+                    height: "200dp"
+                    bar_width: 0
+                    MDBoxLayout:
+                        adaptive_width: True
+                        id: stories
+
+
+                MDSeparator:
+                    size_hint_y: None
+                    height: "10dp"
+                    md_bg_color: Colors.white
+
+                # (3)
+                MDBoxLayout:
+                    adaptive_height: True
+                    orientation: "vertical"
+                    id: post
+                    spacing: "70dp"
+                    padding: 0, "70dp", 0, 0
+
+
+        # Bottom bar
+        BottomBar:
+
+
+
+<Threebuttons@MDRectangleFlatIconButton>:
+    line_color: Colors.white
+    theme_text_color: "Custom"
+    text_color: Colors.black
+    size_hint: 1, 1
+    _no_ripple_effect: True
